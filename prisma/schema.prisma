@@ -22,7 +22,7 @@ model Bot {
   token       String   @unique
   description String?  @default("Bot Telegram")
   status      String   @default("offline")
-  code        String   @default("module.exports = async (ctx) => { await ctx.reply('Halo! Aku bot Telegram.'); };")
+  code        String   @default("module.exports = async (ctx) => { await ctx.reply('Halo!'); };")
   framework   String   @default("grammY")
   webhookUrl  String?
   userId      String
