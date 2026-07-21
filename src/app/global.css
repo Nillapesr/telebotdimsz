@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --background: 40 33% 95%;    /* #f0ede8 */
+  --foreground: 0 0% 10%;       /* #1a1a1a */
+  --primary: 37 100% 50%;       /* #ffd166 */
+  --primary-foreground: 0 0% 10%;
+  --border: 0 0% 10%;
+  --radius: 0rem;
+}
+
+/* ===== BASE STYLES ===== */
+@layer base {
+  * {
+    @apply border-[#1a1a1a];
+  }
+
+  body {
+    @apply bg-[#f0ede8] text-[#1a1a1a] font-mono antialiased;
+  }
+
+  /* Scrollbar brutal */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#f0ede8] border-2 border-[#1a1a1a];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#1a1a1a] border-2 border-[#f0ede8];
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#ffd166];
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-[#ffd166] text-[#1a1a1a];
+  }
+
+  /* Focus ring brutal */
+  :focus-visible {
+    @apply outline-none ring-4 ring-[#1a1a1a] ring-offset-2 ring-offset-[#f0ede8];
+  }
+}
+
+/* ===== BRUTALIST COMPONENTS ===== */
+@layer components {
+  /* Card brutal */
+  .brutal-card {
+    @apply border-4 border-[#1a1a1a] bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .brutal-card-sm {
+    @apply border-3 border-[#1a1a1a] bg-white p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  /* Button brutal */
+  .brutal-btn {
+    @apply border-4 border-[#1a1a1a] px-6 py-3 font-bold uppercase shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] 
+           hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-100;
+  }
+
+  .brutal-btn-primary {
+    @apply brutal-btn bg-[#ffd166] hover:bg-[#f5c145];
+  }
+
+  .brutal-btn-danger {
+    @apply brutal-btn bg-red-100 hover:bg-red-200;
+  }
+
+  .brutal-btn-success {
+    @apply brutal-btn bg-green-100 hover:bg-green-200;
+  }
+
+  .brutal-btn-sm {
+    @apply border-3 border-[#1a1a1a] px-4 py-2 font-bold uppercase text-sm 
+           shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] 
+           hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all duration-100;
+  }
+
+  /* Input brutal */
+  .brutal-input {
+    @apply w-full border-3 border-[#1a1a1a] bg-[#f5f2eb] p-3 font-mono 
+           focus:outline-none focus:ring-2 focus:ring-[#1a1a1a];
+  }
+
+  .brutal-textarea {
+    @apply w-full border-3 border-[#1a1a1a] bg-[#f5f2eb] p-3 font-mono 
+           focus:outline-none focus:ring-2 focus:ring-[#1a1a1a] resize-none;
+  }
+
+  /* Label brutal */
+  .brutal-label {
+    @apply block text-sm font-bold uppercase mb-2;
+  }
+
+  /* Badge brutal */
+  .brutal-badge {
+    @apply px-3 py-1 text-xs font-bold uppercase border-2 border-[#1a1a1a];
+  }
+
+  .brutal-badge-online {
+    @apply brutal-badge bg-green-600 text-white;
+  }
+
+  .brutal-badge-offline {
+    @apply brutal-badge bg-red-600 text-white;
+  }
+
+  /* Separator */
+  .brutal-separator {
+    @apply border-t-4 border-[#1a1a1a] my-6;
+  }
+
+  /* Grid brutal */
+  .brutal-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+
+  /* Container brutal */
+  .brutal-container {
+    @apply max-w-6xl mx-auto px-4 py-8;
+  }
+}
+
+/* ===== UTILITY HELPERS ===== */
+@layer utilities {
+  .border-3 {
+    border-width: 3px;
+  }
+
+  .shadow-brutal {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .shadow-brutal-sm {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .shadow-brutal-lg {
+    box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  /* Animasi blink buat status online */
+  @keyframes brutal-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .animate-brutal-blink {
+    animation: brutal-blink 1.5s ease-in-out infinite;
+  }
+}
