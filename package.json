@@ -6,23 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "@prisma/client": "^6.0.0",
     "next-auth": "^4.24.0",
-    "chat": "latest",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
     "zod": "^3.23.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/bcryptjs": "^2.4.6",
     "prisma": "^6.0.0",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.0.0"
