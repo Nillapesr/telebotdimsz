@@ -1,0 +1,31 @@
+import type { Metadata } from 'next';
+import { Space_Mono } from 'next/font/google';
+import './globals.css';
+
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-space-mono',
+});
+
+export const metadata: Metadata = {
+  title: 'TeleForge — Brutal Bot Platform',
+  description: 'Platform bot Telegram dengan tema brutalism',
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="id" className={spaceMono.variable}>
+      <body className="font-mono bg-[#f0ede8] text-[#1a1a1a] min-h-screen">
+        {children}
+      </body>
+    </html>
+  );
+}
